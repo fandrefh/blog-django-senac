@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -69,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.utils.context_processors.lista_categorias',
             ],
         },
     },
@@ -85,8 +87,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blogdb',
         'USER': 'bloguser',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
+        'PASSWORD': 'Blog123',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }

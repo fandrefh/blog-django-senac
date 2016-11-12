@@ -11,6 +11,7 @@ class Post(models.Model):
     data_post = models.DateTimeField(auto_now_add=True)
     autor = models.ForeignKey(User)
     tags = models.CharField(u'Tags', max_length=30)
+    categoria = models.ForeignKey('Categoria')
     slug = AutoSlugField(populate_from='titulo')
 
     class Meta:
@@ -20,3 +21,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Categoria(models.Model):
+    nome = models.CharField(u'Categoria', max_length=100)
+    obs = models.TextField(u'Observação', blank=True)
+
+    class Meta:
+        verbose_name='Categoria'
+        verbose_name_plural='Categorias'
+        ordering = ['id']
+
+    def __str__(self):
+        return self.nome
