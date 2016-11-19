@@ -10,6 +10,7 @@
 					<p>
 						{{ post.conteudo|safe }}
 					</p>
+          <div class="fb-comments" data-href="http://localhost:8000/posts/ler-post/{{ post.slug }}" data-numposts="5"></div>
 			</div>
       {% include "core/sidebar.html" %}
   </div>

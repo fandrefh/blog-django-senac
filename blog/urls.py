@@ -21,11 +21,13 @@ from django.conf.urls.static import static
 from blog.core import urls as core_urls
 from blog.sobre import urls as sobre_urls
 from blog.posts import urls as posts_urls
+from blog.contato import urls as contato_urls
 
 urlpatterns = [
 	url(r'', include(core_urls, namespace='core')),
 	url(r'^sobre/', include(sobre_urls, namespace='sobre')),
 	url(r'^posts/', include(posts_urls, namespace='posts')),
+	url(r'^contato/', include(contato_urls, namespace='contato')),
     url(r'^redactor/', include('redactor.urls')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
